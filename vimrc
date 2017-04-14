@@ -16,11 +16,11 @@ call vundle#begin()
 " Have Vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
-"Plugin 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 
-"Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on

@@ -22,8 +22,13 @@ Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
 filetype plugin indent on
+
+set nocompatible
+set backspace=indent,eol,start
 
 syntax enable
 

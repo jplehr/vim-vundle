@@ -22,6 +22,12 @@ Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'vim-scripts/TaskList.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -38,6 +44,8 @@ set fdm=syntax
 
 colorscheme itg_flat
 
+" Set spell check active
+nmap <C-j> :set spell spelllang=en_us<CR>
 
 " Toggle Nerd Tree view
 nmap <C-e> :NERDTreeToggle<CR>

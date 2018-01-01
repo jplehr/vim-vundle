@@ -31,6 +31,9 @@ Plugin 'vim-scripts/TaskList.vim'
 call vundle#end()
 filetype plugin indent on
 
+set nocompatible
+set backspace=indent,eol,start
+
 syntax enable
 
 set nu

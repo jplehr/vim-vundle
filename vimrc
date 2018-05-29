@@ -31,6 +31,7 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
+
 filetype plugin indent on
 
 set nocompatible

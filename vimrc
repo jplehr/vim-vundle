@@ -1,10 +1,10 @@
 
 " We want to have a more powerful status line
-let hostname=system('hostname -s')
-set statusline=
-set statusline+=%F%h%m%r%w
-set statusline+=%=%{hostname}
-set laststatus=2
+"let hostname=system('hostname -s')
+"set statusline=
+"set statusline+=%F%h%m%r%w
+"set statusline+=%=%{hostname}
+"set laststatus=2
 
 set nocompatible
 filetype off
@@ -24,6 +24,12 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'edkolev/tmuxline.vim'
+
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -38,11 +44,15 @@ set ai
 set ruler
 set tabstop=2
 set shiftwidth=2
+set cursorline
 
 set fdm=syntax
 
 colorscheme itg_flat
 
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
 
 " Toggle Nerd Tree view
 nmap <C-e> :NERDTreeToggle<CR>

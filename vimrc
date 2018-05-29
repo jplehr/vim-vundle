@@ -50,6 +50,8 @@ set fdm=syntax
 
 colorscheme itg_flat
 
+" Set spell check active
+nmap <C-j> :set spell spelllang=en_us<CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1

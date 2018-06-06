@@ -75,17 +75,16 @@ nmap <S-s> :sp<cr>
 
 
 " Movement through splits
-" TODO find a way to get Alt to work here? So i have the same movement as in
-" Opera.
-execute "set <M-j>=\ej"
-nnoremap <M-j> j
-
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
-map <C-k> :execute ':py3f '. clangBase <cr>
-imap <C-k> <c-o>:execute ':py3f ' . clangBase <cr>
+map <C-space> :execute ':py3f '. clangBase <cr>
+imap <C-space> <c-o>:execute ':py3f ' . clangBase <cr>
 
 " Run YAPF on the whole buffer.
 map <C-p> :call yapf#YAPF()<cr>

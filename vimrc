@@ -30,8 +30,11 @@ Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
+
 call vundle#end()
 filetype plugin indent on
+autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
 
 set nocompatible
 set backspace=indent,eol,start
@@ -44,11 +47,13 @@ set ai
 set ruler
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set cursorline
 
 set fdm=syntax
 
 colorscheme itg_flat
+
 
 " Set spell check active
 nmap <C-j> :set spell spelllang=en_us<CR>
@@ -59,8 +64,13 @@ let g:airline#extensions#tabline#enabled = 1
 " Toggle Nerd Tree view
 nmap <C-e> :NERDTreeToggle<CR>
 
+" Show Buffer Explorer
 nmap <C-a> :BufExplorer<CR>
 
+" Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
 map <C-K> :execute ':pyf '. clangBase <cr>
 imap <C-K> <c-o>:execute ':pyf ' . clangBase <cr>
+
+" Run YAPF on the whole buffer.
+map <C-p> :call yapf#YAPF()<cr>

@@ -54,9 +54,10 @@ set fdm=syntax
 
 colorscheme itg_flat
 
+" Set spell check active in current window
+nmap <C-m> :setlocal spell! spelllang=en_us<cr>
+nmap <S-m> :setlocal spell! spelllang=de_de<cr>
 
-" Set spell check active
-nmap <C-j> :set spell spelllang=en_us<CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -66,6 +67,13 @@ nmap <C-e> :NERDTreeToggle<CR>
 
 " Show Buffer Explorer
 nmap <C-a> :BufExplorer<CR>
+
+" Split screen vertically
+nmap <C-s> :vsp<cr>
+
+" Movement through splits
+" TODO find a way to get Alt to work here? So i have the same movement as in
+" Opera.
 
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'

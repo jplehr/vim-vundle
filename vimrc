@@ -55,6 +55,7 @@ set fdm=syntax
 
 colorscheme itg_flat
 
+
 " Set spell check active in current window
 nmap <C-m> :setlocal spell! spelllang=en_us<cr>
 nmap <S-m> :setlocal spell! spelllang=de_de<cr>
@@ -75,11 +76,14 @@ nmap <C-s> :vsp<cr>
 " Movement through splits
 " TODO find a way to get Alt to work here? So i have the same movement as in
 " Opera.
+execute "set <M-j>=\ej"
+nnoremap <M-j> j
+
 
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
-map <C-K> :execute ':pyf '. clangBase <cr>
-imap <C-K> <c-o>:execute ':pyf ' . clangBase <cr>
+map <C-k> :execute ':py3f '. clangBase <cr>
+imap <C-k> <c-o>:execute ':py3f ' . clangBase <cr>
 
 " Run YAPF on the whole buffer.
 map <C-p> :call yapf#YAPF()<cr>

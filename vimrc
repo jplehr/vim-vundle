@@ -55,24 +55,23 @@ set fdm=syntax
 
 colorscheme itg_flat
 
-
-" Set spell check active in current window
-nmap <C-m> :setlocal spell! spelllang=en_us<cr>
-nmap <S-m> :setlocal spell! spelllang=de_de<cr>
-
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
+
+" Set spell check active in current window
+nnoremap <C-n>u :setlocal spell! spelllang=en_us<cr>
+nnoremap <C-n>d :setlocal spell! spelllang=de_de<cr>
+
 " Toggle Nerd Tree view
-nmap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 " Show Buffer Explorer
-nmap <C-a> :BufExplorer<CR>
+nnoremap <C-a> :BufExplorer<CR>
 
 " Split screen vertically and horizontally
-nmap <C-s> :vsp<cr>
-nmap <S-s> :sp<cr>
-
+nnoremap <C-s> :vsp<cr>
+nnoremap <S-s> :sp<cr>
 
 " Movement through splits
 nnoremap <C-h> <C-w>h
@@ -80,11 +79,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
-map <C-space> :execute ':py3f '. clangBase <cr>
-imap <C-space> <c-o>:execute ':py3f ' . clangBase <cr>
+nnoremap <Space>c :execute ':pyf '. clangBase <cr>
+" FIXME what could be a good mapping in insert mode?
+" imap <Space>c :execute ':pyf ' . clangBase <cr>
 
 " Run YAPF on the whole buffer.
-map <C-p> :call yapf#YAPF()<cr>
+nnoremap <Space>p :call yapf#YAPF()<cr>

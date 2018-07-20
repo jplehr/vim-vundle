@@ -79,9 +79,14 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" git control
+nnoremap <C-g>s :Gstatus<cr>
+nnoremap <C-g>c :Gcommit<cr>
+nnoremap <C-g>d :Gdiff<cr>
+
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
-nnoremap <Space>c :execute ':pyf '. clangBase <cr>
+nnoremap <Space>c :execute ':py3f '. clangBase <cr>
 " FIXME what could be a good mapping in insert mode?
 " imap <Space>c :execute ':pyf ' . clangBase <cr>
 

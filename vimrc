@@ -1,4 +1,3 @@
-
 " We want to have a more powerful status line
 "let hostname=system('hostname -s')
 "set statusline=
@@ -36,6 +35,9 @@ call vundle#end()
 
 filetype plugin indent on
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType h setlocal expandtab shiftwidth=2 softtabstop=2
+
 
 set nocompatible
 set backspace=indent,eol,start
@@ -84,6 +86,9 @@ nnoremap <C-g>s :Gstatus<cr>
 nnoremap <C-g>c :Gcommit<cr>
 nnoremap <C-g>d :Gdiff<cr>
 
+" Search stuff
+map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") . "" <Bar> cw <cr>
+
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'
 nnoremap <Space>c :execute ':py3f '. clangBase <cr>
@@ -92,3 +97,4 @@ nnoremap <Space>c :execute ':py3f '. clangBase <cr>
 
 " Run YAPF on the whole buffer.
 nnoremap <Space>p :call yapf#YAPF()<cr>
+nnoremap <Space>P :YAPF<cr>

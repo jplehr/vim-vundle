@@ -31,10 +31,15 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
 
+Plugin 'SirVer/ultisnips'
+
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 
 filetype plugin indent on
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType h setlocal expandtab shiftwidth=2 softtabstop=2
 
@@ -60,6 +65,10 @@ colorscheme itg_flat
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<C-f>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 " Set spell check active in current window
 nnoremap <C-n>u :setlocal spell! spelllang=en_us<cr>
@@ -86,8 +95,24 @@ nnoremap <C-g>s :Gstatus<cr>
 nnoremap <C-g>c :Gcommit<cr>
 nnoremap <C-g>d :Gdiff<cr>
 
+
+function! GetFileGlobs()
+	let expand_result = expand("%:e")
+	let result = [ '**/*.' . expand_result ]
+	if expand_result ==? 'c' || expand_result ==? 'cc' || expand_result ==? 'cpp'
+		call add(result, '**/*.h')
+	elseif expand_result ==? 'h' || expand_result ==? 'hh' || expand_result ==? 'hpp'
+		call add(result, '**/*.c')
+		call add(result, '**/*.C')
+		call add(result, '**/*.cc')
+		call add(result, '**/*.cpp')
+	endif
+	return join(result, ' ')
+endfunction
+
 " Search stuff
-map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") . "" <Bar> cw <cr>
+"map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") . "" <Bar> cw <cr>
+map <F3> :execute "vimgrep /" . expand("<cword>") . "/j " . GetFileGlobs() . "" <Bar> cw <cr>
 
 " Enable clang-format
 let clangBase=$CLANG_BASE_PATH . '/share/clang/clang-format.py'

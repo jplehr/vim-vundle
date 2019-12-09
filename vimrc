@@ -38,7 +38,7 @@ Plugin 'honza/vim-snippets'
 call vundle#end()
 
 filetype plugin indent on
-autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python setlocal cursorcolumn
 autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType h setlocal expandtab shiftwidth=2 softtabstop=2
@@ -53,6 +53,7 @@ set nu
 set rnu
 set ai
 set ruler
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2

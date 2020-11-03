@@ -75,6 +75,9 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 nnoremap <C-n>u :setlocal spell! spelllang=en_us<cr>
 nnoremap <C-n>d :setlocal spell! spelllang=de_de<cr>
 
+" Make exit easier
+nnoremap <C-q> :q<cr>
+
 " Toggle Nerd Tree view
 nnoremap <C-e> :NERDTreeToggle<CR>
 

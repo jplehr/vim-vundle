@@ -46,6 +46,7 @@ autocmd FileType h setlocal expandtab shiftwidth=2 softtabstop=2
 
 set nocompatible
 set backspace=indent,eol,start
+set encoding=utf-8
 
 syntax enable
 

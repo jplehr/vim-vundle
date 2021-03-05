@@ -9,7 +9,7 @@ set nocompatible
 filetype off
 
 " Set runtime path and call vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$VIM_PLUGINS_RTP/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Have Vundle manage itself

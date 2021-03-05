@@ -62,7 +62,7 @@ set cursorline
 
 set fdm=syntax
 
-colorscheme itg_flat
+silent! colorscheme itg_flat
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1

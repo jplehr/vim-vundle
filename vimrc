@@ -35,10 +35,12 @@ Plugin 'SirVer/ultisnips'
 
 Plugin 'honza/vim-snippets'
 
+Plugin 'sainnhe/sonokai'
+
 call vundle#end()
 
 filetype plugin indent on
-autocmd FileType python setlocal cursorcolumn shiftwidth=2 softtabstop=2
+autocmd FileType python setlocal shiftwidth=2 softtabstop=2
 autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType h setlocal expandtab shiftwidth=2 softtabstop=2
@@ -62,7 +64,7 @@ set cursorline
 
 set fdm=syntax
 
-silent! colorscheme itg_flat
+silent! colorscheme maia
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
